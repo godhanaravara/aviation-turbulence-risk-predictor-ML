@@ -1,4 +1,4 @@
-# 📘 Machine Learning for Turbulence Risk Prediction in U.S. Airspace
+# 📘 Machine Learning for Turbulence Risk Prediction in U.S. Airspace Using Open Flight and Weather Data
 
 **Graduate Capstone Project by [Godha Naravara](https://github.com/godhanaravara)**  
 **Repository:** `aviation-turbulence-risk-predictor-ML`
