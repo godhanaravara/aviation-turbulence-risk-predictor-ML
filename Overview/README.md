@@ -5,7 +5,7 @@
 
 ---
 
-## ✈️ Problem Statement
+## Problem Statement
 
 Turbulence, especially clear-air turbulence (CAT), remains a serious challenge for aviation safety — often arising unexpectedly and outside the reach of radar-based forecasting systems. This project aims to **predict high-risk turbulence events** using open datasets from aviation reports and atmospheric reanalysis sources, providing a data-driven alternative to traditional physics-based forecasting.
 
@@ -13,24 +13,24 @@ Turbulence, especially clear-air turbulence (CAT), remains a serious challenge f
 
 ## 🌍 Data Sources
 
-- **📌 PIREPs** (Pilot Reports)  
+- **PIREPs** (Pilot Reports)  
   From the Iowa Environmental Mesonet — real-time turbulence observations from pilots.
 
-- **📌 ERA5 Reanalysis**  
+- **ERA5 Reanalysis**  
   Hourly pressure-level atmospheric data (28 levels) from Copernicus CDS, with 300+ GB downloaded for 2024.  
   Variables included: wind speed, shear, cloud content, vorticity, geopotential, humidity, and more.
 
 ---
 
-## ⚙️ ML Pipeline Overview
+## ML Pipeline Overview
 
 - **Data Cleaning & Merging**
   - Matched PIREPs with ERA5 based on location, time, and altitude (hPa)
 - **Feature Engineering**
   - Derived features like wind shear, vertical velocity, cloud water content, etc.
 - **Class Balancing**
-  - ✅ Isolation Forest: Downsampled the majority "NEG" turbulence class based on anomaly scores  
-  - ✅ SMOTE: Oversampled the critical "SEV–EXTRM" turbulence cases
+  - Isolation Forest: Downsampled the majority "NEG" turbulence class based on anomaly scores  
+  - SMOTE: Oversampled the critical "SEV–EXTRM" turbulence cases
 - **Dimensionality Reduction + Clustering**
   - Applied **PCA** (99% variance) and **KMeans** to discover latent risk zones
 - **Model Training**
@@ -39,7 +39,7 @@ Turbulence, especially clear-air turbulence (CAT), remains a serious challenge f
 
 ---
 
-## 📊 Evaluation
+## Evaluation
 
 - **Stratified 10-Fold Cross Validation**
 - **Ablation Studies**:
@@ -50,7 +50,7 @@ Turbulence, especially clear-air turbulence (CAT), remains a serious challenge f
 
 ---
 
-## ✅ Results
+## Results
 
 - **XGBoost**:
   - F1-score: **0.88**
@@ -64,7 +64,7 @@ Turbulence, especially clear-air turbulence (CAT), remains a serious challenge f
 
 ---
 
-## 🧠 Skills Demonstrated
+## Skills Demonstrated
 
 | Area | Techniques Used |
 |------|------------------|
@@ -78,12 +78,12 @@ Turbulence, especially clear-air turbulence (CAT), remains a serious challenge f
 
 ---
 
-## 🔒 Disclaimer
+## Disclaimer
 
 To protect research originality and ensure academic integrity:
 - **Full dataset and raw code are not shared publicly**
 - This repository showcases selected techniques, workflows, and outputs
-- For collaboration or more information, feel free to [reach out](mailto:godhanaravara@gmail.com)
+- For collaboration or more information, feel free to [reach out](mailto:godhanaravara@outlook.com)
 
 ---
 
