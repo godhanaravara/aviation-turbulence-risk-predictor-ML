@@ -1,6 +1,6 @@
 .ipynb_checkpoints/
 *.grib
-*.csv
+# *.csv
 *.pkl
 __pycache__/
 .env
