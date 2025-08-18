@@ -1,36 +1,38 @@
-# 📘 Machine Learning for Turbulence Risk Prediction in U.S. Airspace Using Open Flight and Weather Data
+# Machine Learning for Turbulence Risk Prediction in U.S. Airspace Using Open Flight and Weather Data
 
-**Graduate Capstone Project by [Godha Naravara](https://github.com/godhanaravara)**  
+**Graduate Project by [Godha Naravara](https://github.com/godhanaravara)**  
 **Repository:** `aviation-turbulence-risk-predictor-ML`
 
 ---
 
-## ✈️ Problem Statement
+## ▸ Problem Statement
 
-Turbulence, especially clear-air turbulence (CAT), remains a serious challenge for aviation safety — often arising unexpectedly and outside the reach of radar-based forecasting systems. This project aims to **predict high-risk turbulence events** using open datasets from aviation reports and atmospheric reanalysis sources, providing a data-driven alternative to traditional physics-based forecasting.
+Turbulence, especially clear-air turbulence (CAT), remains a serious challenge for aviation safety, often arising unexpectedly and outside the reach of radar-based forecasting systems. This project aims to **predict high-risk turbulence events** using open datasets from aviation reports and atmospheric reanalysis sources, thereby providing a data-driven alternative to traditional physics-based forecasting methods.
+
+The work draws inspiration from the approach introduced by [Mizuno et al. (2022)](https://journalofbigdata.springeropen.com/articles/10.1186/s40537-022-00584-5), who demonstrated the potential of [machine learning based turbulence risk prediction](https://github.com/smzn/Turbulence) near Japanese airports. Their open-source implementation helped guide early exploration, though this project significantly extends the scope by applying the methodology at a national scale using U.S. PIREPs and ERA5 data.
 
 ---
 
-## 🌍 Data Sources
+## Data Sources
 
-- **📌 PIREPs** (Pilot Reports)  
-  From the Iowa Environmental Mesonet — real-time turbulence observations from pilots.
+- **PIREPs** (Pilot Reports)  
+  From the Iowa Environmental Mesonet to real-time turbulence observations from pilots.
 
-- **📌 ERA5 Reanalysis**  
-  Hourly pressure-level atmospheric data (28 levels) from Copernicus CDS, with 1.5 TB downloaded for 2024.  
+- **ERA5 Reanalysis**  
+  Hourly pressure-level atmospheric data (28 levels) from Copernicus CDS, with over 1.5 TB downloaded for 2024.  
   Variables included: wind speed, shear, cloud content, vorticity, geopotential, humidity, and more.
 
 ---
 
-## ⚙️ ML Pipeline Overview
+## ▸ ML Pipeline Overview
 
 - **Data Cleaning & Merging**
   - Matched PIREPs with ERA5 based on location, time, and altitude (hPa)
 - **Feature Engineering**
   - Derived features like wind shear, vertical velocity, cloud water content, etc.
 - **Class Balancing**
-  - ✅ Isolation Forest: Downsampled the majority "NEG" turbulence class based on anomaly scores  
-  - ✅ SMOTE: Oversampled the critical "SEV–EXTRM" turbulence cases
+  - ⤷ Isolation Forest: Downsampled the majority "NEG" turbulence class based on anomaly scores  
+  -  ⤷ SMOTE: Oversampled the critical "SEV–EXTRM" turbulence cases
 - **Dimensionality Reduction + Clustering**
   - Applied **PCA** (99% variance) and **KMeans** to discover latent risk zones
 - **Model Training**
@@ -39,7 +41,7 @@ Turbulence, especially clear-air turbulence (CAT), remains a serious challenge f
 
 ---
 
-## 📊 Evaluation
+## ▸ Evaluation
 
 - **Stratified 10-Fold Cross Validation**
 - **Ablation Studies**:
@@ -50,7 +52,7 @@ Turbulence, especially clear-air turbulence (CAT), remains a serious challenge f
 
 ---
 
-## 📋 Results
+## ▸ Results
 
 - **XGBoost**:
   - F1-score: **0.88**
@@ -64,7 +66,7 @@ Turbulence, especially clear-air turbulence (CAT), remains a serious challenge f
 
 ---
 
-## 🎓 Skills Demonstrated
+## ▸ Skills Demonstrated
 
 | Area | Techniques Used |
 |------|------------------|
