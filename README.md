@@ -13,35 +13,42 @@ The work draws inspiration from the approach introduced by [Mizuno et al. (2022)
 
 ---
 
-## Data Sources
+## [Data Sources & Collection](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/01-Data-collection/01-data-sources-and-acquisition.ipynb)
 
-- **PIREPs** (Pilot Reports)  
+- **PIREPs** (Pilot Reports)
   From the Iowa Environmental Mesonet to real-time turbulence observations from pilots.
 
 - **ERA5 Reanalysis**  
   Hourly pressure-level atmospheric data (28 levels) from Copernicus CDS, with over 1.5 TB downloaded for 2024.  
   Variables included: wind speed, shear, cloud content, vorticity, geopotential, humidity, and more.
 
+![PIREPs Map](01-Data-collection/assets/1.%20PIREP_Reports_2024_Map.png)
+
 ---
 
 ## ▸ ML Pipeline Overview
 
-- **Data Cleaning & Merging**
+![PIREPs Map](02-Preprocessing-and-Feature-engineering/images/pipeline-overview.png)
+**Pipeline Overview figure**
+
+- [**Data Cleaning & Merging**](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/02-Preprocessing-and-Feature-engineering/02-pirep-cleaning-and-matching.ipynb)
   - Matched PIREPs with ERA5 based on location, time, and altitude (hPa)
-- **Feature Engineering**
+- [**Feature Engineering**](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/02-Preprocessing-and-Feature-engineering/03-feature-engineering.ipynb)
   - Derived features like wind shear, vertical velocity, cloud water content, etc.
-- **Class Balancing**
+- [**Class Balancing**](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/03-Class-balancing/04-class-balancing.ipynb)
   - ⤷ Isolation Forest: Downsampled the majority "NEG" turbulence class based on anomaly scores  
   -  ⤷ SMOTE: Oversampled the critical "SEV–EXTRM" turbulence cases
-- **Dimensionality Reduction + Clustering**
+- [**Dimensionality Reduction](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/04-Unsupervised-learning/05-pca-analysis.ipynb) + [Clustering**](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/04-Unsupervised-learning/06-kmeans-clustering.ipynb)
   - Applied **PCA** (99% variance) and **KMeans** to discover latent risk zones
-- **Model Training**
+- [**Model Training**](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/05-Modeling/07-model-results-comparison.ipynb)
   - **XGBoost** (main model)
   - Comparisons with: Random Forest, LightGBM, CatBoost, TabNet, KNN, Naive Bayes
 
+![comparison_output_report](05-Modeling/images/comparison_output_report.png)
+
 ---
 
-## ▸ Evaluation
+## ▸ [Evaluation](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/06-Analysis/deep-dive-analysis.ipynb)
 
 - **Stratified 10-Fold Cross Validation**
 - **Ablation Studies**:
@@ -49,6 +56,8 @@ The work draws inspiration from the approach introduced by [Mizuno et al. (2022)
 - **Unseen Data Testing**:
   - 2025 case study (e.g., Feb 16) used for generalization check
   - Strong performance shown on new seasonal patterns
+
+![feb_16_map_view](06-Analysis/images/feb_16_map_view.png)
 
 ---
 
@@ -61,8 +70,9 @@ The work draws inspiration from the approach introduced by [Mizuno et al. (2022)
   - Discovered a high-risk cluster with **82.35%** SEV–EXTRM sample concentration
 - **Visualizations**:
   - Confusion matrices, feature deviation plots
+  - Bar plots and evaluation metrics like elbow plot, SHAP analysis, ROC-AUC cruves
   - 3D PCA visualizations
-  - U.S. turbulence heatmaps and high-risk cluster overlays
+  - U.S. turbulence and high-risk cluster overlays
 
 ---
 
