@@ -13,7 +13,7 @@ The work draws inspiration from the approach introduced by [Mizuno et al. (2022)
 
 ---
 
-## [Data Sources & Collection](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/01-Data-collection/01-data-sources-and-acquisition.ipynb)
+## ▸ [Data Sources & Collection](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/01-Data-collection/01-data-sources-and-acquisition.ipynb)
 
 - **PIREPs** (Pilot Reports)
   From the Iowa Environmental Mesonet to real-time turbulence observations from pilots.
@@ -38,7 +38,7 @@ The work draws inspiration from the approach introduced by [Mizuno et al. (2022)
 - [**Class Balancing**](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/03-Class-balancing/04-class-balancing.ipynb)
   - ⤷ Isolation Forest: Downsampled the majority "NEG" turbulence class based on anomaly scores  
   -  ⤷ SMOTE: Oversampled the critical "SEV–EXTRM" turbulence cases
-- [**Dimensionality Reduction](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/04-Unsupervised-learning/05-pca-analysis.ipynb) + [Clustering**](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/04-Unsupervised-learning/06-kmeans-clustering.ipynb)
+- [**Dimensionality Reduction**](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/04-Unsupervised-learning/05-pca-analysis.ipynb) + [**Clustering**](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/04-Unsupervised-learning/06-kmeans-clustering.ipynb)
   - Applied **PCA** (99% variance) and **KMeans** to discover latent risk zones
 - [**Model Training**](https://github.com/godhanaravara/aviation-turbulence-risk-predictor-ML/blob/main/05-Modeling/07-model-results-comparison.ipynb)
   - **XGBoost** (main model)
@@ -85,9 +85,14 @@ The work draws inspiration from the approach introduced by [Mizuno et al. (2022)
 | **Class Imbalance** | Isolation Forest + SMOTE (applied only to training set) |
 | **Unsupervised ML** | PCA + KMeans |
 | **Supervised ML** | XGBoost, CatBoost, LightGBM, TabNet, KNN, Naive Bayes |
-| **Model Evaluation** | Cross-validation, unseen test evaluation, ablation |
+| **Model Evaluation** | Cross-validation, unseen data case study (Feb 16, 2025), ablation study |
 | **Visualization** | Matplotlib, Plotly, PCA plots, U.S. map overlays |
 
+✦ Business Impact: 
+- Improves **aviation safety** by early detection of severe–extreme turbulence at identified areas across the U.S. (fewer injuries & hazardous incidents).
+- Supports **airline efficiency** by reducing unscheduled maintenance and costly delays.
+- Offers a **scalable, sensor-free solution** using open data, lowering adoption barriers.
+- Aligns with industry needs for **climate-resilient operations** as turbulence frequency increases with factors such as global warming.
 ---
 
 ## ⓘ Disclaimer
