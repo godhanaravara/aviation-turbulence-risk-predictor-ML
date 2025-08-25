@@ -57,7 +57,7 @@ The work draws inspiration from the approach introduced by [Mizuno et al. (2022)
   - 2025 case study (e.g., Feb 16) used for generalization check
   - Strong performance shown on new seasonal patterns
 
-![feb_16_map_view](06-Analysis/images/feb_16_map_view.png)
+![feb_16_map_view](06-Analysis/images/feb_16th_map_view.png)
 
 ---
 
